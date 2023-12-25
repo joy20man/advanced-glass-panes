@@ -1,0 +1,7 @@
+{
+    "block.advanced_glass_panes.single_glass_pane": "Single Glass Pane",
+    "item.advanced_glass_panes.single_glass_pane": "Single Glass Pane",
+    "block.advanced_glass_panes.double_glass_pane": "Double Glass Pane",
+    "item.advanced_glass_panes.double_glass_pane": "Double Glass Pane",
+    "itemGroup.advanced_glass_panes": "Advanced Glass Panes"
+}

@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=north": { "model": "advanced_glass_panes:block/single_glass_pane"},
+        "facing=east": { "model": "advanced_glass_panes:block/single_glass_pane", "y": 90},
+        "facing=south": { "model": "advanced_glass_panes:block/single_glass_pane", "y": 180 },
+        "facing=west": { "model": "advanced_glass_panes:block/single_glass_pane", "y": 270},
+        "facing=up": { "model": "advanced_glass_panes:block/single_glass_pane", "x": 270},
+        "facing=down": { "model": "advanced_glass_panes:block/single_glass_pane", "x": 90}
+    }
+}

@@ -1,0 +1,36 @@
+{
+	"render_type": "minecraft:translucent",
+	"parent": "minecraft:block/cube",
+	"textures": {
+		"surface": "advanced_glass_panes:block/glass_pane_surface",
+		"edge": "advanced_glass_panes:block/glass_pane_edge",
+		"particle": "advanced_glass_panes:block/glass_pane_surface"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 2],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#surface"},
+				"east": {"uv": [0, 0, 16, 2], "texture": "#edge", "rotation": 90},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#surface"},
+				"west": {"uv": [0, 0, 16, 2], "texture": "#edge", "rotation": 90},
+				"up": {"uv": [0, 0, 16, 2], "texture": "#edge"},
+				"down": {"uv": [0, 0, 16, 2], "texture": "#edge"}
+			}
+		},
+        {
+			"from": [0, 0, 14],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#surface"},
+				"east": {"uv": [0, 0, 16, 2], "texture": "#edge", "rotation": 90},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#surface"},
+				"west": {"uv": [0, 0, 16, 2], "texture": "#edge", "rotation": 90},
+				"up": {"uv": [0, 0, 16, 2], "texture": "#edge"},
+				"down": {"uv": [0, 0, 16, 2], "texture": "#edge"}
+			}
+		}
+	],
+	"display": {}
+}
