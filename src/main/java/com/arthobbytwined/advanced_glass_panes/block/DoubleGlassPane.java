@@ -1,16 +1,22 @@
 package com.arthobbytwined.advanced_glass_panes.block;
 
 import com.arthobbytwined.advanced_glass_panes.initializers.BlockEntityInitializer;
+import com.arthobbytwined.advanced_glass_panes.utils.BlockRotationHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -37,6 +43,7 @@ public class DoubleGlassPane extends DirectionalBlock implements EntityBlock {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos position, CollisionContext context) {
         return switch(state.getValue(FACING)) {
             case NORTH, SOUTH -> Shapes.join(NORTH_AABB, SOUTH_AABB, BooleanOp.OR);
@@ -62,5 +69,17 @@ public class DoubleGlassPane extends DirectionalBlock implements EntityBlock {
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         Direction direction = context.getNearestLookingDirection().getOpposite();
         return defaultBlockState().setValue(FACING, direction);
+    }
+
+    @Override
+    @SuppressWarnings("deprecation")
+    public InteractionResult use(BlockState state, Level level, BlockPos position, Player player, InteractionHand hand, BlockHitResult result) {
+        if(!level.isClientSide() && player.getMainHandItem().getCount() == 0 && hand.equals(InteractionHand.MAIN_HAND)){
+            BlockRotationHelper rotationHelper = new BlockRotationHelper();
+            var info = rotationHelper.GetInfo(result);
+            Direction newDirection = rotationHelper.GetRotatedFace(state.getValue(FACING), info);
+            level.setBlockAndUpdate(position, state.setValue(FACING, newDirection));
+        }
+        return super.use(state, level, position, player, hand, result);
     }
 }
