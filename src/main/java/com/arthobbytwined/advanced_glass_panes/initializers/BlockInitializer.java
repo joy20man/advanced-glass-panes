@@ -2,6 +2,7 @@ package com.arthobbytwined.advanced_glass_panes.initializers;
 
 import com.arthobbytwined.advanced_glass_panes.AdvancedGlassPanes;
 
+import com.arthobbytwined.advanced_glass_panes.block.CornerGlassPane;
 import com.arthobbytwined.advanced_glass_panes.block.DoubleGlassPane;
 import com.arthobbytwined.advanced_glass_panes.block.SingleGlassPane;
 import net.minecraft.world.level.block.Block;
@@ -27,4 +28,10 @@ public class BlockInitializer {
             .mapColor(NONE)
             .strength(0.6f)
             .noOcclusion()));
+
+    public static final RegistryObject<CornerGlassPane> CORNER_GLASS_PANE = BLOCKS.register(
+            "corner_glass_pane", () -> new CornerGlassPane(BlockBehaviour.Properties.of()
+                    .mapColor(NONE)
+                    .strength(0.6f)
+                    .noOcclusion()));
 }

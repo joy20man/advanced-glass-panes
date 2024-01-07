@@ -19,4 +19,8 @@ public class ItemInitializer {
         "double_glass_pane", () ->
             new BlockItem(BlockInitializer.DOUBLE_GLASS_PANE.get(),
             new Item.Properties().stacksTo(64))));
+    public static final RegistryObject<BlockItem> CORNER_GLASS_PANE = CreativeTabInitializer.addToTab(ITEMS.register(
+            "corner_glass_pane", () ->
+                    new BlockItem(BlockInitializer.CORNER_GLASS_PANE.get(),
+                            new Item.Properties().stacksTo(64))));
 }

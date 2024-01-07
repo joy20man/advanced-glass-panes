@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "advanced_glass_panes:single_glass_pane"
+    },
+    {
+      "item": "advanced_glass_panes:single_glass_pane"
+    },
+    {
+      "item": "advanced_glass_panes:single_glass_pane"
+    }
+  ],
+  "result": {
+    "item": "advanced_glass_panes:corner_glass_pane"
+  }
+}
