@@ -1,8 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "1 ",
-    " 1"
+    "11"
   ],
   "key": {
     "1": {
@@ -10,6 +9,6 @@
     }
   },
   "result": {
-    "item": "advanced_glass_panes:corner_glass_pane"
+    "item": "advanced_glass_panes:double_glass_pane"
   }
 }
